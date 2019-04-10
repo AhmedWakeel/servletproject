@@ -2,8 +2,6 @@ package com.simple;
 
 public class Circle {
 
-//	fdfdifjijf
-	
 	
 	public Circle(String name, int id) {
 		super();
