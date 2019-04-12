@@ -9,16 +9,21 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-//@WebServlet(urlPatterns ={"/servlet"})
+import com.buissness.service.LoginService;
+
+//@WebServlet(urlPatterns ={"/SimpleServlet1"})
 public class SimpleServlet extends HttpServlet
 {
 	private static final long serialVersionUID = 1L;
-
-	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException
+    
+//	@Override
+	public void doGetd(HttpServletRequest request, HttpServletResponse response) throws IOException
     {
 		String parameter2 = request.getParameter("prof");
 		System.out.println("prof is = "+parameter2);
@@ -49,13 +54,6 @@ public class SimpleServlet extends HttpServlet
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	
-		
-		
-		
-		
-		
-		
 		
 		final Writer writer1 = new FileWriter("D:\\zz.txt");
 		String name = request.getParameter("name");
@@ -75,4 +73,28 @@ public class SimpleServlet extends HttpServlet
     	PrintWriter writer = response.getWriter();
     	writer.println("hi "+parameter+" "+request.getCharacterEncoding());
     }
+	
+	public void doGet(HttpServletRequest httpServletRequest , HttpServletResponse httpServletResponse) throws IOException
+	{
+		httpServletResponse.setContentType("text/html"); 
+    	PrintWriter out = httpServletResponse.getWriter();
+    	
+		String name = httpServletRequest.getParameter("name");
+		String password = httpServletRequest.getParameter("password");
+		System.out.println("kkk");
+		LoginService loginService = new LoginService();
+		boolean authenticate = loginService.authenticate(password);
+		
+		if(name != null && authenticate)
+		{
+			HttpSession session = httpServletRequest.getSession();
+			session.setAttribute("name", name);
+			httpServletResponse.sendRedirect("Success.jsp");
+		}
+		else
+		{
+			httpServletResponse.sendRedirect("index.jsp");
+		}
+	}
+	
 }

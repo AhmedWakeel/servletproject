@@ -9,7 +9,15 @@
 <body>
  <h1> Hi How are you</h1>
  
- <form action="SimpleServlet1">
+ <form action="SimpleServlet1" method="get">  
+ 
+ <br> User ID  : <input type="text" name = "name"/><br>
+ <br> Password : <input type="password" name="password"/> <br>
+ <br> <input type="submit" />
+ </form>
+ 
+ 
+<%--  <form action="SimpleServlet1">
  Please Enter Your Name :  <input type="text" name="name">
  Profession : 
  <input type="radio" name = "prof" value ="java">Java</input>
@@ -38,7 +46,7 @@ public int mk(int i)
 	return i*i;
 }
 %>
-
+ --%>
  
  
  <!-- <form:form action="SimpleServlet1">

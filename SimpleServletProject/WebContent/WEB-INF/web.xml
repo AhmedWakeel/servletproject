@@ -21,12 +21,12 @@
   </servlet-mapping>
   
   <filter>
-    <filter-name>Filt</filter-name>
+    <filter-name>Filtered</filter-name>
     <filter-class>com.simple.Filt</filter-class>
   </filter>
   
   <filter-mapping>
-    <filter-name>Filt</filter-name>
+    <filter-name>Filtered</filter-name>
     <url-pattern>/SimpleServlet1</url-pattern>
   </filter-mapping>
   

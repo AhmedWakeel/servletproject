@@ -17,10 +17,10 @@ public class Filt implements javax.servlet.Filter {
 	static int count = 1;
 	@Override
 	public void destroy() {
-		  count++;
+		 /* count++;
 		  System.out.println("count is "+count);
 		// TODO Auto-generated method stub
-
+*/
 	}
 
 	@Override
@@ -37,7 +37,7 @@ public class Filt implements javax.servlet.Filter {
 		 System.out.println("getRemoteAddr "+arg0.getRemoteAddr());*/
 		 
 		
-		String driver = "org.apache.derby.jdbc.ClientDriver";
+		/*String driver = "org.apache.derby.jdbc.ClientDriver";
 		Connection connection;
 		try {
 //			Circle circle = null;
@@ -51,10 +51,10 @@ public class Filt implements javax.servlet.Filter {
 //			ResultSet resultSet = ps.executeQuery();
 			 int executeUpdate = ps.executeUpdate();
 			 System.out.println(executeUpdate);
-			/*if (resultSet.next()) {
+			if (resultSet.next()) {
 				System.out.println("circle name is "+resultSet.getString("name"));
 				circle = new Circle(resultSet.getString("name"), 1);
-			}*/
+			}
 //			resultSet.close();
 			ps.close();
 			System.out.println("in doFilter");
@@ -62,7 +62,8 @@ public class Filt implements javax.servlet.Filter {
 			arg2.doFilter(arg0, arg1);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		}*/
+		arg2.doFilter(arg0, arg1);
 	}
 
 	@Override
