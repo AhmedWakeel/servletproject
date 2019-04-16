@@ -8,7 +8,8 @@
 </head>
 <body>
 <%
-  String name = (String)session.getAttribute("name");
+  /* String name = (String)session.getAttribute("name"); */
+     String name =(String)request.getSession().getAttribute("name");
    out.println("hi "+name);
 %>
 
