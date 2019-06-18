@@ -1,0 +1,33 @@
+1)Alt  + Shift + A   move multiple lines 
+
+2)if want to show only current class methods and variables in the auto complition then  
+go to windows/preferences/java/Appearence/type filters/ click on add /and put fully package name like java.awt.* java.lang.Object
+
+3)to uninstall any plugins from eclipse 
+  go to help / uninstall Details
+  
+  4) want to change annonymous class into lambda expression 
+    Runnable r = new Runnable()
+    {
+       @Override 
+       public void run()
+       {
+         syso();
+       }
+    };
+    new Thread(r).start();
+    
+    click on @Override and press control 1 select option Convert to lambda expression
+    
+     Runnable r = () -> syso();
+     press cursor after ) and   1 and follow same steps
+    
+ 5) break point condition 
+ if you to enable break point on particular value on the variable 
+  Ctrl + Shift + B and then right click on circle break point and select break point properties and click on Conditional 
+  put variable value like i == 40 and ok
+     
+    
+    
+    
+     
